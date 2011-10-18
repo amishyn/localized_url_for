@@ -1,6 +1,4 @@
 DummyApp::Application.routes.draw do
-  get "index/index"
-
   scope '(:locale)' do
     get "/" => 'index#index', :as => 'index'
   end
