@@ -9,14 +9,14 @@ All scoped urls on the page http://example.com/en
 === Set locale from params:
 Add it to ApplicationController
 
-before_filter :set_locale
-def set_locale
-  I18n.locale = params[:locale] unless params[:locale].blank?
-end
+  before_filter :set_locale
+  def set_locale
+    I18n.locale = params[:locale] unless params[:locale].blank?
+  end
 
 
 === Config routes:
 
-scope '(:locale)' do
-  #get "/" => 'index#index', :as => 'index'
-end
+  scope '(:locale)' do
+    #get "/" => 'index#index', :as => 'index'
+  end
