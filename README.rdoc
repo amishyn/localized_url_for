@@ -1,0 +1,22 @@
+Localized url_for let you get your scoped urls auto localized
+Example:
+All scoped urls on the page http://example.com/en
+  will look like:
+    - http://example.com/en/contacts
+    - http://example.com/en/about
+    ...
+    
+=== Set locale from params:
+Add it to ApplicationController
+
+before_filter :set_locale
+def set_locale
+  I18n.locale = params[:locale] unless params[:locale].blank?
+end
+
+
+=== Config routes:
+
+scope '(:locale)' do
+  #get "/" => 'index#index', :as => 'index'
+end
