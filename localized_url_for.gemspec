@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   s.add_dependency 'rails', '>=3.0.0'
-  s.add_dependency 'rack-mount'
   s.add_development_dependency 'rspec-rails', '~>2.7.0'
   s.add_development_dependency 'capybara', '~>1.1.1'
   s.add_development_dependency 'sqlite3'
