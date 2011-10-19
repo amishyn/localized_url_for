@@ -1,7 +1,12 @@
 DummyApp::Application.routes.draw do
   scope '(:locale)' do
     get "/" => 'index#index', :as => 'index'
+    resources :posts, :controller => 'index'
+    get "/unnamed" => 'index#unnamed'    
   end
+
+  get "/unscoped" => 'index#index', :as => 'unscoped'
+  get "/unscoped_and_unnamed" => 'index#unscoped_and_unnamed'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

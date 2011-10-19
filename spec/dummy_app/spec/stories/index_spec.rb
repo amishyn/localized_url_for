@@ -18,5 +18,21 @@ describe "GET 'index'", :type => :request do
     it "should set locale to uk" do
       page.find(".index")[:href].should == '/uk'
     end
+    it "should set locale to uk" do
+      page.find(".posts")[:href].should == '/uk/posts'
+    end
+
+    it "should not set locale to uk" do
+      page.find(".unscoped")[:href].should == '/unscoped'
+    end
+
+    it "should not set locale to uk" do
+      page.find(".unnamed")[:href].should == '/uk/unnamed'
+    end
+
+    it "should not set locale to uk" do
+      page.find(".unscoped_and_unnamed")[:href].should == '/unscoped_and_unnamed'
+    end
+    
   end
 end
