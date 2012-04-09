@@ -4,7 +4,7 @@ module LocalizedUrlFor
 
   def url_for_with_locale(options)
     localized_options = options
-    localized_options = options.merge(:locale => I18n.locale) if options.respond_to?(:merge)
+    localized_options = options.merge(:locale => I18n.locale) if options.kind_of?(Hash)
     url_for_without_locale(localized_options)
   end
 
